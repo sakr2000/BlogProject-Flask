@@ -1,7 +1,8 @@
 {% extends "layout.html"%}
 
 {% block content%}
-    <div class="content-section">
+    <div class="col-md-12">
+        <div class="content-section">
     <form method="POST" action="">
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
@@ -34,7 +35,10 @@
 
                 {% endif %}
             </div>
-            <div class="form-check">
+            <small class="text-muted ml-2">
+                <a href="#">Forgot Password?</a>
+            </small>
+            <div class="form-check mt-3">
                 {{ form.remember(class="form-check-input") }}
                 {{ form.remember.label(class="form-check-label") }}
             </div>
@@ -42,13 +46,12 @@
         <div class="form-group">
             {{ form.submit(class="btn btn-outline-info") }}
         </div>
-        <small class="text-muted ml-2">
-            <a href="#">Forgot Password?</a>
-        </small>
     </form>
     <div class="border-top pt-3">
         <small class="text-muted">
             Need An Account? <a class="ml-2" href="{{ url_for('register') }}">Sign Up Now</a>
         </small>
+    </div>
+    </div>
     </div>
 {% endblock content%}
