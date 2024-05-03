@@ -2,10 +2,11 @@ import os
 
 
 class Config:
-    MAIL_SERVER = 'smtp.googlemail.com'
-    MAIL_POR = 587
-    MAIL_USE_TL = True
+    MAIL_SERVER = 'smtp.gmail.com'
+    MAIL_PORT = 587
     MAIL_USERNAME = os.environ.get('EMAIL_USER')
     MAIL_PASSWORD = os.environ.get('EMAIL_PASS')
+    MAIL_USE_TLS = True
+    MAIL_USE_SSL = False
     SECRET_KEY = os.environ.get('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')

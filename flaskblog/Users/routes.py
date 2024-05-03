@@ -67,7 +67,7 @@ def user_posts(username):
     page = request.args.get('page', 1, type=int)
     user = User.query.filter_by(username=username).first_or_404()
     posts = Post.query.filter_by(author=user).order_by(Post.date_posted.desc()).paginate(page=page,per_page=5)
-    return render_template('user_posts.html',user=user,posts=posts)
+    return render_template('user_posts.html',title=f'{user.username} Posts',user=user,posts=posts)
 
 @users.route('/forgot_password',methods=['GET','POST'])
 def forgot_password():
@@ -77,7 +77,6 @@ def forgot_password():
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         send_reset_email(user)
-        flash('An email has been sent with instructions to reset your password', 'info')
         return redirect(url_for('users.login'))
     return render_template('forgot_password.html',title='Forgot Password',form=form)
 
