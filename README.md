@@ -56,6 +56,7 @@ This project is a professional blog website created using Python Flask, HTML, CS
 [![Watch the video](https://img.youtube.com/vi/nN33B2KiL40/0.jpg)](https://www.youtube.com/watch?v=nN33B2KiL40)
 
 </div>
+
 ## Installation and Usage
 
 1. **Clone the Repository:**
